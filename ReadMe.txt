@@ -1,52 +1,28 @@
-
-Chitta : 
-
-ip:  CreateSnapshotFile(sourceDirectoryPath,destinationdirectoryPath)
-op:  A text file is written with Details Obtained by GetMetaDataForDirectory function 
+Input:  CreateSnapshotFile(sourceDirectoryPath,destinationdirectoryPath)
+Output:  A text file is written with Details Obtained by GetMetaDataForDirectory function 
 Creation of .snapShot File :
 
 	a) Create template in file .snapshot_template
 	b) Save the Details of File in .snapShot file
 
-	----------------
-
-ip : GetMetaDataForDirectory(sourcePath)
-op : List of Details of Folder and Files 
+Input : GetMetaDataForDirectory(sourcePath)
+Output : List of Details of Folder and Files 
 Get Metdata About Directory(Path)
 	recursively 
 
--------------------
-Nitish : 
-
-ip:  CreateSnapshotMetadataFile(sourceDirectoryPath,destinationdirectoryPath)
-op:  A text file is written with Details about new Snapshot Created  
+Input:  CreateSnapshotMetadataFile(sourceDirectoryPath,destinationdirectoryPath)
+Output:  A text file is written with Details about new Snapshot Created  
 creation of .snapsot__metadata__ at specified location (/home/userfolder)
 	Number of snapshot details  
 
-ip:  removefromSnapshotMetadataFile(sourceDirectoryPath,destinationdirectoryPath)
-op:  snapsot__metadata__ Details willl remove particular snapshot line from file   
+Input:  removefromSnapshotMetadataFile(sourceDirectoryPath,destinationdirectoryPath)
+Output:  snapsot__metadata__ Details willl remove particular snapshot line from file   
 remove of line from .snapsot__metadata__ at specified location (/home/userfolder)  
 
 CheckSnapShotExistForFile(sourceDirectoryPath,destinationdirectoryPath)
 
-Done :
-
-Comands Created inside executable need to process: 
-
-startSnapShotEngine -> start process : jha to give program which can run in background 
-
-CreateSnapShot SourcePath DestinationPath : working 
-
-restoreSnapShot SourcePath : not yet
-
-stopSnashot sourcePath : working
-
-
--------------------
-Jha : 
-
-ip: comaresnapshotfile(sourcePathSnapshot,destinationPathSnapshot)
-op: provide data structure with difference between them 
+Input: comaresnapshotfile(sourcePathSnapshot,destinationPathSnapshot)
+Output: provide data structure with difference between them 
 vector<CompareSnapShotDS> comparesnapshotfile(sourceFile,destinationFile)
 
 PerformOperation()
@@ -59,17 +35,12 @@ PerformOperation()
 
 to remove redundant file copy and delete operations from list
 
--------------------
-Suraj :  
-
-ip: replaceModifiedData(sourcePath,destinationPath)
-op: ouput success/reject 
+Input: replaceModifiedData(sourcePath,destinationPath)
+Output: ouput success/reject 
 rsync Implemntation (sourcePath,destinationPath)
 
 a)if file not exist copy
 b)if file exist then apply rsync on it -> destinationpath
-
--------------------
 
 struct SnapShotMetaDataInformation
 {
@@ -101,13 +72,10 @@ struct CompareSnapShotDS
 	string OperationType;
 }
 
-------------------------------
 main()
 {
 	Driver Function()	
 }
-
------------------------------
 
 CopyFunctional(sourcePath,destinationPath)
 	Recusrsive Copy 
